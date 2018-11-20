@@ -20,6 +20,7 @@ connection.connect(err => {
   }
 });
 
+
 app.use(cors());
 
 app.get('/', (req, res) => {
@@ -55,8 +56,6 @@ app.get("/pets", (req, res) => {
     })
 });
 
-
-
-app.listen(4000, () => {
-    console.log("potato on port 4000");
+app.listen(5000, () => {
+    console.log("potato on port 5000");
 });
