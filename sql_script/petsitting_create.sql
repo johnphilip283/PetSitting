@@ -9,7 +9,7 @@ create table species (
     species_name varchar(50)
 );
 
-drop table if exists `user`;
+drop table if exists user;
 create table user (
 	user_id int primary key auto_increment,
     name varchar(100) not null,
@@ -59,8 +59,8 @@ create table request (
     description varchar(500),
     owner_id int not null,
     pet_id int not null,
-    start datetime not null,
-    end datetime not null,
+    start date not null,
+    end date not null,
     wage double,
     constraint foreign key (pet_id) references pet (pet_id),
     constraint foreign key (owner_id) references user (user_id)
