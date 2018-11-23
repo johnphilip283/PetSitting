@@ -6,6 +6,7 @@ import Navbar from "../navbar/Navbar";
 import './Dashboard.scss';
 import PetCard from "./PetCard";
 import SitterPreferences from "./SitterPreferences";
+import ListingCard from "../listings/ListingCard";
 
 export default class Dashboard extends React.Component {
 
@@ -51,6 +52,14 @@ export default class Dashboard extends React.Component {
                         </Grid>
                         <Grid item>
                             <Button color={'secondary'} variant={'contained'}>+ Add Listing</Button>
+                        </Grid>
+                    </Grid>
+                    <Grid container item direction={'column'} spacing={'24'}>
+                        <Grid item>
+                            <ListingCard/>
+                        </Grid>
+                        <Grid item>
+                            <ListingCard/>
                         </Grid>
                     </Grid>
                 </Grid>

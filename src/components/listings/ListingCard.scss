@@ -1,0 +1,49 @@
+.listing-card {
+  width: 850px;
+  height: 250px;
+  box-sizing: border-box;
+
+  .card-action {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .pet-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #3AAFA9;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .species {
+    font-weight: 300;
+  }
+
+  .listing-content {
+    font-family: Lato, sans-serif;
+    width: 600px;
+
+  }
+}
