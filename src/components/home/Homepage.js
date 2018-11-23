@@ -1,55 +1,40 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
 
 import './Homepage.scss';
 
 export default class Homepage extends React.Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            pets: []
-        };
-    }
-
-    componentDidMount() {
-        this.getPets();
-    }
-
-    getPets = _ => {
-        fetch('http://localhost:5000/pets')
-            .then(response => response.json())
-            .then(response => this.setState({pets: response.data}))
-            .catch(err => console.error(err))
-    };
-
-    addPet = () => {
-        const tuppy = {
-            name: 'Tuppy',
-            age: 10,
-            description: 'tuppy wuppy',
-            owner_id: 2,
-            species_id: 6
-        };
-
-        fetch(`http://localhost:5000/pets/add?name=${tuppy.name}&age=${tuppy.age}&description=${tuppy.description}`
-            + `&owner_id=${tuppy.owner_id}&species_id=${tuppy.species_id}`)
-            .then(response => response.text())
-            .then(this.getPets)
-            .catch(err => console.error(err))
-    };
-
-    renderPet = ({pet_id, name, description}) => <div key={pet_id}> {name} <br/> {description} </div>
-
     render() {
-        const {pets} = this.state;
         return (
             <div className={'home'}>
-                {pets.map(this.renderPet)}
-                <button onClick={() => this.addPet()}>Add Chinny</button>
+                <Grid container>
+                    <Grid container item className={'header'} justify={'space-between'} alignItems={'center'}>
+                        <Grid item>
+                            <img src={require('../../assets/logo.png')} alt={'logo'} width={230}/>
+                        </Grid>
+                        <Grid item>
+                            <Link to='/dashboard'>
+                                <Button color={'secondary'} variant={'outlined'}>Login</Button>
+                            </Link>
+                        </Grid>
+                    </Grid>
+                    <Grid container className={'body'} direction={'column'}>
+                        <Grid item>
+                            <h1>Find pet-sitters<br/>
+                                for all your furry<br/>
+                                or scaley companions</h1>
+                        </Grid>
+                        <Grid item>
+                            <Link to='/dashboard'>
+                            <Button color={'secondary'} variant={'contained'} size={'large'}>Sign Up</Button>
+                            </Link>
+                        </Grid>
+                    </Grid>
+                </Grid>
             </div>
-
         );
     }
-
 }

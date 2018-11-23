@@ -1,3 +1,32 @@
+body {
+  height: 100vh;
+}
+
 .home {
+  a {
+    text-decoration: none;
+  }
+  background-image: url('../../assets/landing_bg.png');
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .header {
+    height: 80px;
+    padding: 0 20px;
+  }
+
+  .body {
+    padding: 200px;
+    h1 {
+      font-family: Rockwell, serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: white;
+    }
+  }
+
 
 }
+

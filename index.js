@@ -54,10 +54,10 @@ app.get("/users/:id", (req, res) => {
     })
 });
 
-// get user's pet with user_id
+// get user's pets with user_id
 app.get('/users/:id/pets', function (req, res) {
     const id = req.params.id;
-    const GET_PET = `SELECT pet.name as name, age, description, species_name
+    const GET_PET = `SELECT pet_id, pet.name as name, age, description, species_name
      FROM pet join species using (species_id) WHERE owner_id = ${id};`;
 
     connection.query(GET_PET, (err, results) => {
@@ -76,7 +76,7 @@ app.get('/users/:id/listings', function (req, res) {
     const id = req.params.id;
     const GET_USER_LISTINGS = `SELECT * FROM (
         select request_id, title, user_id, user.name as owner, start, end, city, 
-            request.description, wage, pet.name as pet_name, species_name as species
+            request.description, wage, pet_id, pet.name as pet_name, species_name as species
         from request join user on (owner_id = user_id)
 	                 join pet using (pet_id)
                      join species using (species_id)) as listings
@@ -253,11 +253,6 @@ app.get("/ratings/:id", (req, res) => {
         }
     })
 });
-
-
-
-
-
 
 
 app.listen(5000, () => {
