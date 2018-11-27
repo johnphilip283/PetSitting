@@ -27,8 +27,10 @@ export default class CreateListing extends React.Component {
     }
 
     handleChange = name => event => {
-        this.setState({[name]: event.target.checked});
+        this.setState({[name]: event.target.value});
     };
+
+
 
     render() {
         return (

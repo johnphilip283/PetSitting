@@ -6,7 +6,7 @@ body {
   a {
     text-decoration: none;
   }
-  //background-image: url('../../../public/assets/landing_bg.png');
+  background-image: url('landing_bg.png');
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,6 +19,7 @@ body {
 
   .body {
     padding: 200px;
+
     h1 {
       font-family: Rockwell, serif;
       font-size: 48px;
