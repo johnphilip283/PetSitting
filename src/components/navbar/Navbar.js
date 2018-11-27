@@ -13,14 +13,14 @@ export default class Navbar extends React.Component {
                 <Grid container item justify={'flex-start'} alignItems={'center'} direction={'row'} xs={8} spacing={40}>
                     <Grid item>
                         <Link to='/dashboard'>
-                            <img src={require('../../assets/logo.png')} alt={'logo'} width={200}/>
+                            <img src={'/assets/logo.png'} alt={'logo'} width={200}/>
                         </Link>
                     </Grid>
                     <Grid item className={this.props.activeTab === 'dashboard' ? 'active' : null}>
                         <Link to='/dashboard'>DASHBOARD</Link>
                     </Grid>
                     <Grid item className={this.props.activeTab === 'listings' ? 'active' : null}>
-                        <Link to='/dashboard'>LISTINGS</Link>
+                        <Link to='/listings'>LISTINGS</Link>
                     </Grid>
                     <Grid item className={this.props.activeTab === 'sitters' ? 'active' : null}>
                         <Link to='/dashboard'>SITTERS</Link>

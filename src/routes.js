@@ -4,6 +4,8 @@ import theme from './styles/materialTheme';
 import MuiThemeProvider from '@material-ui/core/styles/MuiThemeProvider'
 import Homepage from "./components/home/Homepage";
 import Dashboard from "./components/dashboard/Dashboard";
+import Listings from "./components/listings/Listings";
+import CreateListing from "./components/listings/CreateListing";
 
 const Routes = props => {
     return (
@@ -12,6 +14,8 @@ const Routes = props => {
                 <Switch>
                     <Route exact path="/" render={() => <Homepage/>}/>
                     <Route exact path="/dashboard" render={() => <Dashboard/>}/>
+                    <Route exact path="/listings" render={() => <Listings/>}/>
+                    <Route exact path="/listings/create" render={() => <CreateListing/>}/>
                 </Switch>
             </Router>
         </MuiThemeProvider>

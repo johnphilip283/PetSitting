@@ -34,6 +34,7 @@ INSERT INTO preference VALUES
 	(1, 1),
     (1, 2),
     (1, 6);
+
     
     
     

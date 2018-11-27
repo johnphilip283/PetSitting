@@ -183,7 +183,7 @@ app.get('/pets/add', function (req, res) {
 // gets all the job listings
 app.get("/listings", (req, res) => {
     const GET_ALL_LISTINGS = "SELECT request_id, title, user_id, user.name as owner, start, end, city, " +
-        "request.description, wage, pet.name as pet_name, species_name as species\n" +
+        "request.description, wage, pet_id, pet.name as pet_name, species_name as species\n" +
         "from request join user on (owner_id = user_id)\n" +
         "\tjoin pet using (pet_id)\n" +
         "join species using (species_id);";

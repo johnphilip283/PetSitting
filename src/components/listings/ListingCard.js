@@ -4,6 +4,7 @@ import Card from "@material-ui/core/Card/Card";
 import CardActionArea from "@material-ui/core/CardActionArea/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia/CardMedia";
 import CardContent from "@material-ui/core/CardContent/CardContent";
+import {petImages} from "../../constants";
 
 export default class ListingCard extends React.Component {
 
@@ -11,17 +12,21 @@ export default class ListingCard extends React.Component {
         return (
             <Card className={'listing-card'}>
                 <CardActionArea className={'card-action'}>
-                    <CardMedia
-                        className={'pet-pic'}
-                        image={require('../../assets/tofu.jpg')}
-                        title="FUFU"
-                    />
+                    <div className={'pet-profile'}>
+                        <CardMedia
+                            className={'pet-pic'}
+                            image={petImages[this.props.listing.pet_id - 1]}
+                            title={this.props.listing.name}
+                        />
+                        <h6>{this.props.listing.pet_name}
+                            <span className={'species'}>, {this.props.listing.species}</span>
+                        </h6>
+                    </div>
                     <CardContent className={'listing-content'}>
-                        <h3>Tofu<span className={'species'}>, Dog</span></h3>
-                        <h4>Owner: Amy Luo</h4>
+                        <h3>{this.props.listing.title}</h3>
+                        <h4>Owner: {this.props.listing.owner}</h4>
                         <h5>01/01/19 - 02/14/19 | Boston, MA</h5>
-                        <p>Tofu is the cutest fucking dog in the world and you’d be lucky to even lay your peasant
-                            eyes on her. She is actually a cat.</p>
+                        <p>{this.props.listing.description}</p>
                     </CardContent>
                 </CardActionArea>
             </Card>

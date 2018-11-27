@@ -13,7 +13,7 @@ export default class Homepage extends React.Component {
                 <Grid container>
                     <Grid container item className={'header'} justify={'space-between'} alignItems={'center'}>
                         <Grid item>
-                            <img src={require('../../assets/logo.png')} alt={'logo'} width={230}/>
+                            <img src={'/assets/logo.png'} alt={'logo'} width={230}/>
                         </Grid>
                         <Grid item>
                             <Link to='/dashboard'>

@@ -5,8 +5,12 @@ import Card from "@material-ui/core/Card/Card";
 import CardActionArea from "@material-ui/core/CardActionArea/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia/CardMedia";
 import CardContent from "@material-ui/core/CardContent/CardContent";
+import {petImages} from "../../constants";
 
 export default class PetCard extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
@@ -14,13 +18,12 @@ export default class PetCard extends React.Component {
                 <CardActionArea>
                     <CardMedia
                         className={'pic'}
-                        image={require('../..//assets/tofu.jpg')}
-                        title="Contemplative Reptile"
+                        image={petImages[this.props.pet.pet_id - 1]}
+                        title={this.props.pet.name}
                     />
                     <CardContent>
-                        <h3>Tofu<span className={'species'}>, Dog</span></h3>
-                            <p>Tofu is the cutest fucking dog in the world and you’d be lucky to even lay your peasant
-                                eyes on her. She is actually a cat.</p>
+                        <h3>{this.props.pet.name}<span className={'species'}>, {this.props.pet.species_name}</span></h3>
+                        <p>{this.props.pet.description}</p>
                     </CardContent>
                 </CardActionArea>
             </Card>
