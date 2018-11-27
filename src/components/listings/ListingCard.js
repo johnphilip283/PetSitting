@@ -27,6 +27,7 @@ export default class ListingCard extends React.Component {
                         <h4>Owner: {this.props.listing.owner}</h4>
                         <h5>01/01/19 - 02/14/19 | Boston, MA</h5>
                         <p>{this.props.listing.description}</p>
+                        <div className="wage">${this.props.listing.wage}/hr</div>
                     </CardContent>
                 </CardActionArea>
             </Card>

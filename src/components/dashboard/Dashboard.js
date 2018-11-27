@@ -9,6 +9,7 @@ import SitterPreferences from "./SitterPreferences";
 import ListingCard from "../listings/ListingCard";
 import AddPet from "./AddPet";
 import {user_id} from '../../constants';
+import {Link} from "react-router-dom";
 
 export default class Dashboard extends React.Component {
 
@@ -19,7 +20,6 @@ export default class Dashboard extends React.Component {
             pets: [],
             listings: []
         }
-
     }
 
     componentDidMount() {
@@ -91,7 +91,9 @@ export default class Dashboard extends React.Component {
                             <h2>Your Listings</h2>
                         </Grid>
                         <Grid item>
-                            <Button color={'secondary'} variant={'contained'}>+ Add Listing</Button>
+                            <Button color={'secondary'} variant={'contained'}>
+                                <Link to='/listings/create'>+ Create Listing</Link>
+                            </Button>
                         </Grid>
                     </Grid>
                     <Grid container item direction={'column'} spacing={24}>
