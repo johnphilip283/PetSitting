@@ -23,13 +23,11 @@ export default class Navbar extends React.Component {
                         <Link to='/listings'>LISTINGS</Link>
                     </Grid>
                     <Grid item className={this.props.activeTab === 'sitters' ? 'active' : null}>
-                        <Link to='/dashboard'>SITTERS</Link>
+                        <Link to='/sitters'>SITTERS</Link>
                     </Grid>
                 </Grid>
                 <Grid container item className={'profile'} xs={4} justify={'flex-end'} alignItems={'center'}>
-                    <Link to='/dashboard'>
-                        <Button color={'secondary'} variant={'outlined'}>Login</Button>
-                    </Link>
+                    <span>Amy Luo</span>
                 </Grid>
             </Grid>
         );

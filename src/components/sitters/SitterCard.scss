@@ -1,0 +1,69 @@
+.sitter-card {
+  width: 560px;
+  height: 230px;
+  box-sizing: border-box;
+
+
+  .card-action {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    font-family: Lato, sans-serif;
+  }
+
+  .sitter-pic {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 5px solid #3AAFA9;
+  }
+
+  .sitter-content {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  p {
+    margin: 5px 0;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 10px 0;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-family: Lato, sans-serif;
+    font-size: 21px;
+    margin: 0 -10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .prefs {
+    font-size: 21px;
+    margin-top: 20px
+  }
+
+  .star-rating {
+    padding-top: 10px;
+  }
+}

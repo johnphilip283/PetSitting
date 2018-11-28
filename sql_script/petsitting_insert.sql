@@ -12,7 +12,7 @@ INSERT INTO species VALUES
 	(3, "Bird"),
 	(4, "Reptiles and Scales"),
 	(5, "Rabbit"),
-	(6, "Small Animals"),
+	(6, "Small Animal"),
 	(7, "Barnyard"),
 	(8, "Fish");
 
@@ -23,8 +23,11 @@ INSERT INTO pet VALUES
 	(4, "Tootsie", 2, "taken by someone else.", 4, 5);
     
 INSERT INTO request VALUES
-	(1, "Looking for reputable dog-sitter Jan.-Feb.", "Someone pls feed my stinky bean.", 2, 1, "2019-01-01", "2019-02-14", 20),
-    (2, "Do hamsters even need sitters?", "I hope Reslife doesn’t find out about my illegal hamster.", 2, 2, "2019-01-01", "2019-02-14", 10),
+	(1, "Looking for reputable dog-sitter Jan.-Feb.", "Someone pls feed my stinky bean. She swears she’s a dog but this is highly debatable. 
+    Will get zoomies around 7pm daily. Likes broccoli and the blood of her enemies as snacks. Also requires a joint supplement because her 
+    leggers are too long and this dog has no chill.", 2, 1, "2019-01-01", "2019-02-14", 20),
+    (2, "Do hamsters even need sitters?", "I hope Reslife doesn’t find out about my illegal hamster. High maintenance hamster. 
+    Requires a minimum of 7 sunflower seeds a day. Likes to aggressively run on her wheel during romantic movies.", 2, 2, "2019-01-01", "2019-02-14", 10),
     (3, "I want a bunny.", "Tootsie is in a loving home that is not mine.", 4, 4, "2018-12-05", "2019-12-31", 20);
     
 INSERT INTO rating VALUES

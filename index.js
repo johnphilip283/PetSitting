@@ -220,8 +220,8 @@ app.get("/listings/create", (req, res) => {
 //////////////////// SITTERS //////////////////////
 
 app.get("/sitters", (req, res) => {
-    const GET_ALL_SITTERS = 'select user.name, city, email, phone_number, round(avg(stars) as avg_rating, 2)\n' +
-        'from user join rating on (user_id=ratee_id)\n' +
+    const GET_ALL_SITTERS = 'select user_id, user.name, city, email, phone_number, round(avg(stars), 2) as avg_rating\n' +
+        'from user left join rating on (user_id=ratee_id)\n' +
         'where user.is_sitter = 1\n' +
         'group by user.name, city, email, phone_number;';
 
