@@ -1,10 +1,10 @@
 use petsitting;
 
 INSERT INTO user VALUES
-	(1, "John Philip", "philip.j@husky.neu.edu", "potato", 1, "Boston", "9148265190"),
-	(2, "Amy Luo", "luo.am@husky.neu.edu", "breab", 0, "Boston", "9146666666"),
-	(3, "Caroline McCadden", "mccadden.c@husky.neu.edu", "abc123", 1, "Reading", "2124533678"),
-	(4, "John Rachlin", "rachlin.j@northeastern.edu", "database4lyfe", 1, "Boston", "1234567890");
+	(1, "John Philip", "philip.j@husky.neu.edu", "potato", 1, "Boston, MA", "914-826-5190"),
+	(2, "Amy Luo", "luo.am@husky.neu.edu", "breab", 0, "Boston, MA", "914-666-6666"),
+	(3, "Caroline McCadden", "mccadden.c@husky.neu.edu", "abc123", 1, "Reading, MA", "212-453-3678"),
+	(4, "John Rachlin", "rachlin.j@northeastern.edu", "database4lyfe", 1, "Boston, MA", "123-456-7890");
 
 INSERT INTO species VALUES
 	(1, "Dog"),

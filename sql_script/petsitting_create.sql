@@ -17,7 +17,7 @@ create table user (
     password varchar(50) not null,
     is_sitter tinyint default 0,
     city varchar(100),
-    phone_number varchar(10)
+    phone_number varchar(15)
 );
 
 drop table if exists rating;

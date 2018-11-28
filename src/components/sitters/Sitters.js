@@ -35,20 +35,11 @@ export default class Sitters extends React.Component {
                     </Grid>
                     <Grid item container direction={'row'} justify={'flex-start'} alignItems={'flex-start'}
                           spacing={24}>
-                        <Grid item>
-                            <SitterCard/>
-                        </Grid>
-                        <Grid item>
-                            <SitterCard/>
-                        </Grid>
-                        <Grid item>
-                            <SitterCard/>
-                        </Grid>
-                        {/*{this.state.listings.map(listing => (*/}
-                            {/*<Grid item key={listing.request_id}>*/}
-                                {/*<SitterCard listing={listing}/>*/}
-                            {/*</Grid>*/}
-                        {/*))}*/}
+                        {this.state.sitters.map(sitter => (
+                            <Grid item key={sitter.user_id}>
+                                <SitterCard sitter={sitter}/>
+                            </Grid>
+                        ))}
                     </Grid>
                 </Grid>
             </div>

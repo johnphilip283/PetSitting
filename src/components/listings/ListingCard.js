@@ -25,7 +25,8 @@ export default class ListingCard extends React.Component {
                     <CardContent className={'listing-content'}>
                         <h3>{this.props.listing.title}</h3>
                         <h4>Owner: {this.props.listing.owner}</h4>
-                        <h5>01/01/19 - 02/14/19 | Boston, MA</h5>
+                        <h5>{this.props.listing.start.split('T')[0]} to {this.props.listing.end.split('T')[0]} |
+                            {this.props.listing.city}</h5>
                         <p>{this.props.listing.description}</p>
                         <div className="wage">${this.props.listing.wage}/hr</div>
                     </CardContent>
