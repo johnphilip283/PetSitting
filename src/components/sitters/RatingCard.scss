@@ -1,0 +1,57 @@
+.rating-card {
+  width: 850px;
+  height: 200px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 20px;
+
+  .card-action {
+
+
+  }
+
+  .user-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid #3AAFA9;
+  }
+
+  h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 10px 0;
+  }
+
+  h5 {
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  h6 {
+    font-family: Lato, sans-serif;
+    font-size: 21px;
+    margin: 0 -10px;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .rating-content {
+    font-family: Lato, sans-serif;
+    width: 600px;
+    padding-left: 30px;
+  }
+}

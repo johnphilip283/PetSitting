@@ -1,5 +1,4 @@
 import React from 'react';
-import Grid from '@material-ui/core/Grid';
 
 import './Stars.scss';
 import StarIcon from '@material-ui/icons/Star';
@@ -7,9 +6,6 @@ import StarHalfIcon from '@material-ui/icons/StarHalf';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
 export default class Stars extends React.Component {
-    state = {
-        stars: []
-    };
 
     getStars(num) {
         let stars = [];
@@ -36,7 +32,6 @@ export default class Stars extends React.Component {
                 {stars[3]}
                 {stars[4]}
             </div>
-
         );
     }
 }

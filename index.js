@@ -239,7 +239,7 @@ app.get("/sitters", (req, res) => {
 // gets all ratings about that user_id
 app.get("/ratings/:id", (req, res) => {
     const id = req.params.id;
-    const GET_USER_RATINGS = `select stars, description, user.name as rater_name
+    const GET_USER_RATINGS = `select stars, description, user_id as rater_id, user.name as rater_name
     from rating join user on (rater_id = user_id)
     where ratee_id = ${id};`;
 

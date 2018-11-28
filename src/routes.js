@@ -7,6 +7,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Listings from "./components/listings/Listings";
 import CreateListing from "./components/listings/CreateListing";
 import Sitters from "./components/sitters/Sitters";
+import SitterRatings from "./components/sitters/SitterRatings";
 
 const Routes = props => {
     return (
@@ -18,6 +19,7 @@ const Routes = props => {
                     <Route exact path="/listings" render={() => <Listings/>}/>
                     <Route exact path="/listings/create" render={() => <CreateListing/>}/>
                     <Route exact path="/sitters" render={() => <Sitters/>}/>
+                    <Route path="/sitters/:id" component={SitterRatings} />
                 </Switch>
             </Router>
         </MuiThemeProvider>

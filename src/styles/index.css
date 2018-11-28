@@ -29,3 +29,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.content {
+  padding: 48px 60px;
+}
