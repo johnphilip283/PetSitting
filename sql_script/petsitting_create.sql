@@ -27,6 +27,7 @@ create table rating (
     description varchar(250),
     rater_id int not null,
     ratee_id int not null,
+    rating_date date,
     constraint check (stars BETWEEN 1 AND 5),
     constraint foreign key (rater_id) references user (user_id),
     constraint foreign key (ratee_id) references user (user_id)

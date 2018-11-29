@@ -23,6 +23,7 @@ export default class PetCard extends React.Component {
                     />
                     <CardContent>
                         <h3>{this.props.pet.name}<span className={'species'}>, {this.props.pet.species_name}</span></h3>
+                        <h4>Age: {this.props.pet.age}</h4>
                         <p>{this.props.pet.description}</p>
                     </CardContent>
                 </CardActionArea>

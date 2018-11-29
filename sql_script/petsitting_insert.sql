@@ -31,7 +31,7 @@ INSERT INTO request VALUES
     (3, "I want a bunny.", "Tootsie is in a loving home that is not mine.", 4, 4, "2018-12-05", "2019-12-31", 20);
     
 INSERT INTO rating VALUES
-	(1, 3, "Extremely okay hamster sitter.", 2, 1);
+	(1, 3, "Extremely okay hamster sitter. Does not fully appreciate the power of UFO but fed sufficient amount of sunflower seeds.", 2, 1, '2018-09-05');
     
 INSERT INTO preference VALUES
 	(1, 1),

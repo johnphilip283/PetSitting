@@ -7,33 +7,43 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import {userImages} from "../../constants";
 import Stars from "./Stars";
+import {Redirect} from "react-router-dom";
 
 export default class SitterCard extends React.Component {
 
+    state = {
+        redirect: false
+    };
+
     render() {
-        return (
-            <Card className={'sitter-card'}>
-                <CardActionArea className={'card-action'}>
-                    <div className={'pet-profile'}>
-                        <CardMedia
-                            className={'sitter-pic'}
-                            image={userImages[this.props.sitter.user_id - 1]}
-                            title={this.props.sitter.name}
-                        />
-                    </div>
-                    <CardContent className={'sitter-content'}>
-                        <div className={'title'}>
-                            <h3>{this.props.sitter.name}</h3>
-                            <Button className={'contact'} variant={'contained'} color={'secondary'}>Contact</Button>
+
+        if (this.state.redirect) {
+            return <Redirect to={"/sitters/" + this.props.sitter.user_id}/>
+        } else {
+            return (
+                <Card className={'sitter-card'}>
+                    <CardActionArea className={'card-action'} onClick={() => this.setState({redirect: true})}>
+                        <div className={'pet-profile'}>
+                            <CardMedia
+                                className={'sitter-pic'}
+                                image={userImages[this.props.sitter.user_id - 1]}
+                                title={this.props.sitter.name}
+                            />
                         </div>
-                        <h4>{this.props.sitter.city}</h4>
-                        <p>{this.props.sitter.email}</p>
-                        <p>{this.props.sitter.phone_number}</p>
-                        <div className="prefs">Dog, Cat, Small Animal</div>
-                        <Stars stars={this.props.sitter.avg_rating}/>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        );
+                        <CardContent className={'sitter-content'}>
+                            <div className={'title'}>
+                                <h3>{this.props.sitter.name}</h3>
+                                <Button className={'contact'} variant={'contained'} color={'secondary'}>Contact</Button>
+                            </div>
+                            <h4>{this.props.sitter.city}</h4>
+                            <p>{this.props.sitter.email}</p>
+                            <p>{this.props.sitter.phone_number}</p>
+                            <div className="prefs">Dog, Cat, Small Animal</div>
+                            <Stars stars={this.props.sitter.avg_rating}/>
+                        </CardContent>
+                    </CardActionArea>
+                </Card>
+            );
+        }
     }
 }
