@@ -30,7 +30,16 @@ export default class CreateListing extends React.Component {
         this.setState({[name]: event.target.value});
     };
 
-
+    handleSubmit = name => event => {
+        const url = `localhost:5000/listing/create/
+                     ?title=${this.state.title}
+                     &?start=${this.state.start}
+                     &?end=${this.state.end}
+                     &?pet_id=${this.state.pet_id}
+                     &?wage=${this.state.wage}
+                     &?description=${this.state.description}`;
+        fetch(url)
+    };
 
     render() {
         return (
