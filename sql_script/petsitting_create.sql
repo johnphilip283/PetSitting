@@ -23,7 +23,7 @@ create table user (
 drop table if exists rating;
 create table rating (
 	rating_id int primary key auto_increment,
-    stars int not null,
+    stars double not null,
     description varchar(250),
     rater_id int not null,
     ratee_id int not null,

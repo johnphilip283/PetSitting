@@ -69,7 +69,7 @@ export default class CreateListing extends React.Component {
                             </FormControl>
                         </Grid>
                         <Grid item md={6} xs={12}>
-                            <TextField label="Age" type="number" value={this.state.age}
+                            <TextField label="Wage" type="number" value={this.state.age}
                                        variant={'outlined'} fullWidth/>
                         </Grid>
                         <Grid item xs={12}>

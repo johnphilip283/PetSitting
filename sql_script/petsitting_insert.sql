@@ -20,7 +20,9 @@ INSERT INTO pet VALUES
 	(1, "Tofu", 1, "A dog pretending to be a cat.", 2, 1),
 	(2, "UFO", 1, "A smol lump who likes sunflower seeds.", 2, 6),
 	(3, " Sparky", 3, "he's a guard pomeranian.", 1, 1),
-	(4, "Tootsie", 2, "taken by someone else.", 4, 5);
+	(4, "Tootsie", 2, "taken by someone else.", 4, 5),
+    (5, "Chinny", 11, "The wisest chinchilla in the land.", 2, 6),
+    (6, "Tuppy", 10, "It's hard to believe this derp is the same age as 5th graders.", 2, 6);
     
 INSERT INTO request VALUES
 	(1, "Looking for reputable dog-sitter Jan.-Feb.", "Someone pls feed my stinky bean. She swears she’s a dog but this is highly debatable. 
@@ -28,15 +30,24 @@ INSERT INTO request VALUES
     leggers are too long and this dog has no chill.", 2, 1, "2019-01-01", "2019-02-14", 20),
     (2, "Do hamsters even need sitters?", "I hope Reslife doesn’t find out about my illegal hamster. High maintenance hamster. 
     Requires a minimum of 7 sunflower seeds a day. Likes to aggressively run on her wheel during romantic movies.", 2, 2, "2019-01-01", "2019-02-14", 10),
-    (3, "I want a bunny.", "Tootsie is in a loving home that is not mine.", 4, 4, "2018-12-05", "2019-12-31", 20);
+    (3, "I want a bunny.", "Tootsie is in a loving home that is not mine.", 4, 4, "2018-12-05", "2019-12-31", 20),
+    (4, "Local demon dog.", "Sparky is on a permanent sugar rush. Please look after this hyper furball.", 1, 3, "2019-01-1", "2019-06-28", 0.02);
     
 INSERT INTO rating VALUES
-	(1, 3, "Extremely okay hamster sitter. Does not fully appreciate the power of UFO but fed sufficient amount of sunflower seeds.", 2, 1, '2018-09-05');
+	(1, 3, "Extremely okay hamster sitter. Does not fully appreciate the power of UFO but fed sufficient amount of sunflower seeds.", 2, 1, '2018-11-01'),
+    (2, 5, "Great rabbit sitter! Tootsie had a great time with John.", 4, 1, '2018-10-15'),
+    (3, 4.5, "Tofu is 16% less stinky after her week under John's care. Wah", 2, 1, '2018-09-05'),
+    (4, 5, "Amazing pet sitter! 10/10 would recommend.", 3, 4, '2017-04-19'),
+    (5, 4.5, "Great cat sitter!!", 1, 3, '2017-03-22');
     
 INSERT INTO preference VALUES
 	(1, 1),
-    (1, 2),
-    (1, 6);
+    (1, 5),
+    (1, 6),
+    (3, 2),
+    (3, 4),
+    (4, 5),
+    (4, 8);
 
     
     
