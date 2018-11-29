@@ -71,6 +71,8 @@ app.get('/users/:id/pets', function (req, res) {
     })
 });
 
+
+
 // get all of the user_id's listings
 app.get('/users/:id/listings', function (req, res) {
     const id = req.params.id;
@@ -216,6 +218,9 @@ app.get("/listings/create", (req, res) => {
         }
     })
 });
+
+
+
 
 //////////////////// SITTERS //////////////////////
 

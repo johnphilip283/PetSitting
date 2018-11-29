@@ -34,8 +34,8 @@ export default class CreateListing extends React.Component {
 
     render() {
         return (
-
             <div className="create-listing">
+                <form onSubmit={this.handleSubmit}>
                 <Navbar activeTab={'listings'}/>
                 <Grid container direction={'column'} className={'content'} spacing={16}>
                     <Grid item xs={12}>
@@ -73,21 +73,22 @@ export default class CreateListing extends React.Component {
                                        variant={'outlined'} fullWidth/>
                         </Grid>
                         <Grid item xs={12}>
-                            <TextField multiline  label="Description" rows={12} type="text" value={this.state.description}
-                                       variant={'outlined'} fullWidth/>
+                            <TextField multiline label="Description" rows={12} type="text" value={this.state.description}
+                                       variant={'outlined'} onChange={this.handleChange("description")} fullWidth/>
                         </Grid>
                         <Grid container item direction={'row'} justify={'flex-end'} spacing={16}>
                             <Grid item>
-                                <Button color={'primary'}>
+                                <Button type={"button"} color={'primary'}>
                                     <Link to='/listings'>Cancel</Link>
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Button color={'primary'} variant={'contained'}>Save</Button>
+                                <Button type={'submit'} color={'primary'} variant={'contained'} >Save</Button>
                             </Grid>
                         </Grid>
                     </Grid>
                 </Grid>
+                </form>
             </div>
 
         );
