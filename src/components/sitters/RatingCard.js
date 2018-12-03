@@ -1,7 +1,6 @@
 import React from 'react';
 import './RatingCard.scss';
 import Card from "@material-ui/core/Card/Card";
-import CardActionArea from "@material-ui/core/CardActionArea/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia/CardMedia";
 import CardContent from "@material-ui/core/CardContent/CardContent";
 import {userImages} from "../../constants";
