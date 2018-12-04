@@ -126,11 +126,27 @@ app.get("/pets", (req, res) => {
     })
 });
 
+// adds a pet
+app.get('/pets/add', function (req, res) {
+    const {name, age, description, owner_id, species_id} = req.query;
+    const ADD_PET_QUERY = `INSERT INTO pet (name, age, description, owner_id, species_id) VALUES ('${name}', ${age}, '${description}', ${owner_id}, ${species_id});`;
+
+    connection.query(ADD_PET_QUERY, (err, results) => {
+        if (err) {
+            return res.send(err)
+        } else {
+            res.send({
+                message: "Successfully added pet.",
+                data: results
+            })
+        }
+    });
+});
+
 // get pet with pet_id
 app.get('/pets/:id', function (req, res) {
     const id = req.params.id;
-    const GET_PET = `SELECT pet.name as pet_name, age, description, user.name as owner_name, species_name as species
-     FROM pet join species using (species_id) join user on (owner_id = user_id) WHERE pet_id = ${id};`;
+    const GET_PET = `SELECT pet.name as pet_name, age, description, user.name as owner_name, species_name as species FROM pet join species using (species_id) join user on (owner_id = user_id) WHERE pet_id = ${id};`;
 
     connection.query(GET_PET, (err, results) => {
         if (err) {
@@ -160,23 +176,21 @@ app.get('/pets/:id/photos', function (req, res) {
 });
 
 
-// adds a pet
-app.get('/pets/add', function (req, res) {
-    const {name, age, description, owner_id, species_id} = req.query;
-    const ADD_PET_QUERY = `INSERT INTO pet (name, age, description, owner_id, species_id) VALUES ('${name}', ${age}, ` +
-        `'${description}', ${owner_id}, ${species_id})`;
 
-    connection.query(ADD_PET_QUERY, (err, results) => {
+
+app.get("/species", (req, res) => {
+    const GET_ALL_SPECIES_QUERY = "SELECT * FROM species;";
+    connection.query(GET_ALL_SPECIES_QUERY, (err, results) => {
         if (err) {
             return res.send(err)
         } else {
-            res.send({
-                message: "Successfully added pet.",
+            return res.json({
                 data: results
             })
         }
-    });
+    })
 });
+
 
 //////////////////// LISTINGS //////////////////////
 
@@ -202,8 +216,7 @@ app.get("/listings", (req, res) => {
 // adds a listing
 app.get("/listings/create", (req, res) => {
     const {owner_id, title, start, end, pet_id, wage, description} = req.query;
-    const ADD_LISTING = `INSERT into request (owner_id, title, start, end, pet_id, wage, description) VALUES ( 
-        ${owner_id}, '${title}', ${start}, ${end}, ${pet_id}, ${wage}, '${description});'`;
+    const ADD_LISTING = `INSERT into request (owner_id, title, start, end, pet_id, wage, description) VALUES (${owner_id}, '${title}', '${start}', '${end}' , ${pet_id}, ${wage}, '${description}');`;
 
     connection.query(ADD_LISTING, (err, results) => {
         if (err) {

@@ -15,7 +15,7 @@ export default class PetCard extends React.Component {
     render() {
         return (
             <Card className={'pet-card'}>
-                <CardActionArea>
+                <CardActionArea className={'pet-card'}>
                     <CardMedia
                         className={'pic'}
                         image={petImages[this.props.pet.pet_id - 1]}

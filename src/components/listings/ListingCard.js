@@ -11,7 +11,7 @@ export default class ListingCard extends React.Component {
     render() {
         return (
             <Card className={'listing-card'}>
-                <CardActionArea className={'card-action'}>
+                <CardActionArea className={' listing-card card-action'}>
                     <div className={'pet-profile'}>
                         <CardMedia
                             className={'pet-pic'}
