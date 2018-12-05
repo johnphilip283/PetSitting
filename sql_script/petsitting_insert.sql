@@ -36,13 +36,15 @@ INSERT INTO preference VALUES
     (1, 2),
     (1, 6);
 
-    
-    
-    
-    
-    
-    
-    
-    
+INSERT INTO request (title, description, owner_id, pet_id, start, end, wage) VALUES ("fishy wishy", "this is a fish. his name is rummy. take care of him.", 1, 1, DATE(NOW()), DATE_ADD(NOW(), INTERVAL 1 DAY), 10);
+INSERT INTO rating (stars, description, rater_id, ratee_id) VALUES (2, "amy got hit with that ddu ddu", 1, 2);
+INSERT INTO user (user_id, name, email, password, is_sitter, city, phone_number) VALUES (5, "TImothee Chalamet", "timmyhusky.neu.edu", "callmebyyourname", 1, "Boston", "9149789678");
+INSERT INTO rating (stars, description, rater_id, ratee_id) VALUES (4, "I'm absolutely amazing. I'm the best petsitter I've ever had.", 3, 3);
+INSERT INTO request (title, description, owner_id, pet_id, start, end, wage) VALUES ("fishy wishy", "this is a fish. his name is rummy. take care of him.", 1, 3, DATE(NOW()), DATE_ADD(NOW(), INTERVAL 1 DAY), -1);
+INSERT INTO request (title, description, owner_id, pet_id, start, end, wage) VALUES ("i need snake help", "amy's a snake and she needs to be pet sat. srs inquiries only. may bite upon presentation of crappy k-pop.", 2, 2,  DATE_ADD(NOW(), INTERVAL 1 DAY), DATE(NOW()), 1);
+INSERT INTO rating (stars, description, rater_id, ratee_id) VALUES (10, "This person was an absolutely great sitter. great taste in music. perfect human being. ", 2, 1);
+INSERT INTO rating (stars, description, rater_id, ratee_id) VALUES (10, "This person was an absolutely great sitter. great taste in music. perfect human being. ", 2, 1);
+
+
     
     
