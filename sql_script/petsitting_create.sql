@@ -74,3 +74,94 @@ create table preference (
      constraint foreign key (user_id) references user (user_id),
       constraint foreign key (species_id) references species (species_id)
 );
+
+drop trigger if exists check_stars;
+delimiter //
+create trigger check_stars before insert on rating
+for each row
+begin
+	if (new.stars < 1 or new.stars > 5) then
+		signal sqlstate '45000'
+		set message_text = 'Stars must be between 1 and 5.';
+	end if;
+end 
+//
+delimiter ;
+
+drop trigger if exists check_end_start_date;
+delimiter //
+create trigger check_end_start_date before insert on request
+for each row
+begin if (new.start > new.end) then
+		signal sqlstate '45000'
+		set message_text = 'Start date must be before end date.';
+	end if;
+end 
+//
+delimiter ;
+
+drop trigger if exists negative_wage;
+delimiter //
+create trigger negative_wage before insert on request
+for each row
+begin if (new.wage < 0) then
+		signal sqlstate '45000'
+		set message_text = 'Wage cannot be negative.';
+	end if;
+end
+//
+delimiter ;
+
+drop trigger if exists check_self_hype;
+delimiter //
+create trigger check_self_hype before insert on rating
+for each row
+begin
+	if (new.ratee_id = new.rater_id) then
+		signal sqlstate '45000'
+		set message_text = 'Cannot hype yourself up by being both the rater and the ratee.';
+	end if;
+end 
+//
+delimiter ;
+
+drop trigger if exists check_user_email;
+delimiter //
+create trigger check_user_email before insert on user
+for each row
+begin
+	if (LOCATE("@", NEW.email) = 0) THEN
+		SIGNAL SQLSTATE '45000'
+		SET MESSAGE_TEXT = 'Email must have an @.';
+	end if;
+end 
+//
+delimiter ;
+
+drop trigger if exists check_user_being_rated_is_sitter;
+
+drop trigger if exists check_pet_put_up_is_owners;
+delimiter //
+create trigger check_pet_put_up_is_owners before insert on request
+for each row
+begin
+	if (new.pet_id in (select pet.pet_id
+									from pet
+									join user on (pet.owner_id = user.user_id)
+									where user.user_id = new.owner_id)) then
+		signal sqlstate '45000'
+		set message_text = ' Cannot enter a rating about someone who is not a sitter.';
+	end if;
+end 
+//
+delimiter ;
+
+drop function if exists duration;
+delimiter //
+create function duration(start date, end date) returns integer
+begin
+  return end - start;
+end //
+delimiter ;
+
+select  duration(date(now()), date_add(date(now()), interval 2 day));
