@@ -21,7 +21,7 @@ export default class Sitters extends React.Component {
     getSitters = _ => {
         fetch(`http://localhost:5000/sitters`)
             .then(response => response.json())
-            .then(response => this.setState({sitters: response.data}, () => console.log(this.state)))
+            .then(response => this.setState({sitters: response.data}))
             .catch(err => console.error(err))
     };
 

@@ -29,7 +29,6 @@ export default class SitterCard extends React.Component {
                 let prefs = '';
                 response.data.forEach(pref => {prefs += pref.species_name + ', '});
                 this.setState({prefs: prefs.substring(0, prefs.length - 2)});
-                console.log(this.state);
             }).catch(err => console.error(err))
     };
 

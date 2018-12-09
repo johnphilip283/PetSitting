@@ -18,10 +18,7 @@ connection.connect(err => {
 });
 app.use(cors());
 
-
-app.get('/', (req, res) => {
-    res.send("/pets for all pets")
-});
+//////////////////// APIs //////////////////////
 
 //////////////////// USERS //////////////////////
 
@@ -177,7 +174,7 @@ app.get('/pets/:id/photos', function (req, res) {
 
 
 
-
+// gets all species
 app.get("/species", (req, res) => {
     const GET_ALL_SPECIES_QUERY = "SELECT * FROM species;";
     connection.query(GET_ALL_SPECIES_QUERY, (err, results) => {
@@ -232,6 +229,7 @@ app.get("/listings/create", (req, res) => {
 
 //////////////////// SITTERS //////////////////////
 
+// gets all users that are pet sitters
 app.get("/sitters", (req, res) => {
     const GET_ALL_SITTERS = 'select user_id, user.name, city, email, phone_number, round(avg(stars), 2) as avg_rating\n' +
         'from user left join rating on (user_id=ratee_id)\n' +
@@ -249,7 +247,7 @@ app.get("/sitters", (req, res) => {
     })
 });
 
-// gets all ratings about that user_id
+// gets all ratings about that user with user_id
 app.get("/ratings/:id", (req, res) => {
     const id = req.params.id;
     const GET_USER_RATINGS = `select stars, rating_date, description, user_id as rater_id, user.name as rater_name

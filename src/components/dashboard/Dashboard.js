@@ -33,7 +33,7 @@ export default class Dashboard extends React.Component {
     getUser = _ => {
         fetch(`http://localhost:5000/users/${user_id}`)
             .then(response => response.json())
-            .then(response => this.setState({user: response.data[0]}, () => console.log(this.state)))
+            .then(response => this.setState({user: response.data[0]}))
             .catch(err => console.error(err))
     };
 
@@ -41,7 +41,7 @@ export default class Dashboard extends React.Component {
     getUserPets = _ => {
         fetch(`http://localhost:5000/users/${user_id}/pets`)
             .then(response => response.json())
-            .then(response => this.setState({pets: response.data}, () => console.log(this.state)))
+            .then(response => this.setState({pets: response.data}))
             .catch(err => console.error(err))
     };
 
@@ -49,7 +49,7 @@ export default class Dashboard extends React.Component {
     getUserListings = _ => {
         fetch(`http://localhost:5000/users/${user_id}/listings`)
             .then(response => response.json())
-            .then(response => this.setState({listings: response.data}, () => console.log(this.state)))
+            .then(response => this.setState({listings: response.data}))
             .catch(err => console.error(err))
     };
 

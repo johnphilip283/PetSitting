@@ -23,7 +23,7 @@ export default class Dashboard extends React.Component {
     getListings = _ => {
         fetch(`http://localhost:5000/listings`)
             .then(response => response.json())
-            .then(response => this.setState({listings: response.data}, () => console.log(this.state)))
+            .then(response => this.setState({listings: response.data}))
             .catch(err => console.error(err))
     };
 
