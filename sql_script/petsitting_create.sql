@@ -158,12 +158,12 @@ delimiter //
 create trigger check_pet_put_up_is_owners before insert on request
 for each row
 begin
-	if (new.pet_id in (select pet.pet_id
+	if (new.pet_id not in (select pet.pet_id
 									from pet
 									join user on (pet.owner_id = user.user_id)
 									where user.user_id = new.owner_id)) then
 		signal sqlstate '45000'
-		set message_text = ' Cannot enter a rating about someone who is not a sitter.';
+		set message_text = 'Cannot put up a pet that is not your own.';
 	end if;
 end 
 //
@@ -176,5 +176,3 @@ begin
   return end - start;
 end //
 delimiter ;
-
-select  duration(date(now()), date_add(date(now()), interval 2 day));
