@@ -139,6 +139,19 @@ end
 delimiter ;
 
 drop trigger if exists check_user_being_rated_is_sitter;
+delimiter //
+create trigger check_user_being_rated_is_sitter before insert on rating
+for each row
+begin
+	if ((select is_sitter 
+			from user
+		 where user.user_id = new.ratee_id) = 0) then
+		signal sqlstate '45000'
+		set message_text = ' Cannot enter a rating about someone who is not a sitter.';
+	end if;
+end 
+//
+delimiter ;
 
 drop trigger if exists check_pet_put_up_is_owners;
 delimiter //
