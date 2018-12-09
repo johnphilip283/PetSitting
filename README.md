@@ -1,44 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# src/
+This folder contains all of the React components that we use in order to build the website.
 
-## Available Scripts
+# `index.js`
+index.js contains the server that communicates with the local instance of MySQL Workbench, and exposes all of the APIs that our front-end uses.
 
-In the project directory, you can run:
+# sql_script/
+Contains the SQL files that are able to duplicate our database on a local machine. 
 
-### `npm start`
+# public/
+Contains all of the static assets (images, etc) that we use on the front-end.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# node-modules/
+Contains all of the React dependencies that we need for the front-end.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# wireframes/
+Contains our preliminary sketches for the website.
 
-### `npm test`
+# Installation Instructions
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Before attempting these installation steps, make sure you have the latest version of Node and nodemon installed.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. From sql_scripts/, run petsitting_create.sql and petsitting_insert.sql. 
+2. Edit index.js line 9 with your local MySQL Workbench connection information, changing the root password to match yours.
+3. In your terminal, navigate to the root directory of the project and run `nodemon index.js`
+4. In your terminal, then run `npm install`.
+5. Then, in your terminal, run `npm start`.
+6. In your web browser, navigate to `localhost:3000`.
