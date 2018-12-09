@@ -10,7 +10,9 @@ export default class Navbar extends React.Component {
     render() {
         return (
             <Grid className={'navbar'} container justify={'space-between'} alignItems={'center'}>
-                <Grid container item justify={'flex-start'} alignItems={'center'} direction={'row'} xs={8} spacing={40}>
+                <Grid className={'left'} container item justify={'flex-start'} alignItems={'center'} direction={'row'}
+                      xs={8} spacing={40}>
+                    {/* Logo */}
                     <Grid item>
                         <Link to='/dashboard'>
                             <img src={'/assets/logo.png'} alt={'logo'} width={200}/>
@@ -26,7 +28,8 @@ export default class Navbar extends React.Component {
                         <Link to='/sitters'>SITTERS</Link>
                     </Grid>
                 </Grid>
-                <Grid container item className={'profile'} xs={4} justify={'flex-end'} alignItems={'center'}>
+                {/* User Profile */}
+                <Grid item className={'profile'}>
                     <span>Amy Luo</span>
                 </Grid>
             </Grid>

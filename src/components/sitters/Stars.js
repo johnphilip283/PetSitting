@@ -5,6 +5,7 @@ import StarIcon from '@material-ui/icons/Star';
 import StarHalfIcon from '@material-ui/icons/StarHalf';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 
+// Rating stars, filled/outlined
 export default class Stars extends React.Component {
 
     getStars(num) {

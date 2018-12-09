@@ -14,6 +14,7 @@ import Select from "@material-ui/core/Select";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import MenuItem from "@material-ui/core/MenuItem";
 
+// Add Pet Modal
 export default class AddPet extends React.Component {
 
     constructor(props) {
@@ -32,6 +33,7 @@ export default class AddPet extends React.Component {
         this.getSpecies();
     }
 
+    // Gets all species from database
     getSpecies = () => {
         fetch(`http://localhost:5000/species`)
             .then(response => response.json())
@@ -40,6 +42,7 @@ export default class AddPet extends React.Component {
             }).catch(err => console.error(err))
     };
 
+    // Adds pet to database
     addPet = () => {
         fetch(`http://localhost:5000/pets/add?name=${this.state.name}&age=${this.state.age}&description=${this.state.description}&owner_id=${user_id}&species_id=${this.state.species_id}`)
             .then(response => response.json())
@@ -83,14 +86,17 @@ export default class AddPet extends React.Component {
                                 <h1>Add Pet</h1>
                             </Grid>
                             <Grid container item xs={6} spacing={16}>
+                                {/*Pet Name Input*/}
                                 <Grid item xs={12}>
                                     <TextField id="name" label="Name" type="text" variant={'outlined'}
                                                value={this.state.name} onChange={this.handleChange('name')} fullWidth/>
                                 </Grid>
+                                {/*Pet Age Input*/}
                                 <Grid item xs={6}>
                                     <TextField id="age" label="Age" type="number" variant={'outlined'}
                                                value={this.state.age} onChange={this.handleChange('age')} fullWidth/>
                                 </Grid>
+                                {/*Pet Species Dropdown*/}
                                 <Grid item xs={6}>
                                     <FormControl variant="outlined" fullWidth>
                                         <InputLabel>Species</InputLabel>
@@ -105,9 +111,11 @@ export default class AddPet extends React.Component {
                                         </Select>
                                     </FormControl>
                                 </Grid>
+                                {/*Pet Description Input*/}
                                 <Grid item xs={12}>
                                     <TextField id="description" label="Description" type="text" variant={'outlined'}
-                                               value={this.state.description} onChange={this.handleChange('description')}
+                                               value={this.state.description}
+                                               onChange={this.handleChange('description')}
                                                multiline rows="8" fullWidth/>
                                 </Grid>
                             </Grid>

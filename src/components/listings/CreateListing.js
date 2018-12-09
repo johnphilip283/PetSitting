@@ -13,6 +13,7 @@ import MenuItem from "@material-ui/core/MenuItem/MenuItem";
 import {Link, Redirect} from "react-router-dom";
 import {user_id} from '../../constants';
 
+// Create Listing Page
 export default class CreateListing extends React.Component {
 
     constructor(props) {
@@ -34,6 +35,7 @@ export default class CreateListing extends React.Component {
 
     }
 
+    // Gets User's pets from
     getUserPets = _ => {
         fetch(`http://localhost:5000/users/${user_id}/pets`)
             .then(response => response.json())
@@ -41,6 +43,7 @@ export default class CreateListing extends React.Component {
             .catch(err => console.error(err))
     };
 
+    // Creates listing in database
     createListing = () => {
         fetch(`http://localhost:5000/listings/create?owner_id=${user_id}&title=${this.state.title}&start=${this.state.start}&end=${this.state.end}&pet_id=${this.state.pet_id}&wage=${this.state.wage}&description=${this.state.description}`)
             .then(response => response.json())
@@ -77,18 +80,22 @@ export default class CreateListing extends React.Component {
                             <span>Looking for a pet sitter? Create a job listing for pet-sitters to find.</span>
                         </Grid>
                         <Grid container item className={'form'} spacing={24} md={6} xs={12}>
+                            {/* Listing Title */}
                             <Grid item xs={12}>
                                 <TextField variant={'outlined'} fullWidth label={'Title'} type={'text'}
                                            value={this.state.title} onChange={this.handleChange('title')}/>
                             </Grid>
+                            {/* Listing Start */}
                             <Grid item md={6} xs={12}>
                                 <TextField label="Start Date" type="date" value={this.state.start}
                                            variant={'outlined'} fullWidth onChange={this.handleChange('start')}/>
                             </Grid>
+                            {/* Listing End */}
                             <Grid item md={6} xs={12}>
                                 <TextField label="End Date" type="date" value={this.state.end}
                                            variant={'outlined'} fullWidth onChange={this.handleChange('end')}/>
                             </Grid>
+                            {/* Listing Pet */}
                             <Grid item md={6} xs={12}>
                                 <FormControl variant="outlined" fullWidth>
                                     <InputLabel>Pet</InputLabel>
@@ -102,10 +109,12 @@ export default class CreateListing extends React.Component {
                                     </Select>
                                 </FormControl>
                             </Grid>
+                            {/* Listing Wage */}
                             <Grid item md={6} xs={12}>
                                 <TextField label="Wage" type="number" value={this.state.wage}
                                            variant={'outlined'} fullWidth onChange={this.handleChange('wage')}/>
                             </Grid>
+                            {/* Listing Description */}
                             <Grid item xs={12}>
                                 <TextField multiline label="Description" rows={12} type="text"
                                            value={this.state.description}

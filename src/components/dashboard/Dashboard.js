@@ -11,6 +11,7 @@ import AddPet from "./AddPet";
 import {user_id} from '../../constants';
 import {Link} from "react-router-dom";
 
+// Dashboard Container
 export default class Dashboard extends React.Component {
 
     constructor(props) {
@@ -28,6 +29,7 @@ export default class Dashboard extends React.Component {
         this.getUserListings();
     }
 
+    // Gets the currently logged in user
     getUser = _ => {
         fetch(`http://localhost:5000/users/${user_id}`)
             .then(response => response.json())
@@ -35,7 +37,7 @@ export default class Dashboard extends React.Component {
             .catch(err => console.error(err))
     };
 
-
+    // Gets the current user's pets
     getUserPets = _ => {
         fetch(`http://localhost:5000/users/${user_id}/pets`)
             .then(response => response.json())
@@ -43,6 +45,7 @@ export default class Dashboard extends React.Component {
             .catch(err => console.error(err))
     };
 
+    // Gets the current user's listings
     getUserListings = _ => {
         fetch(`http://localhost:5000/users/${user_id}/listings`)
             .then(response => response.json())
@@ -58,6 +61,7 @@ export default class Dashboard extends React.Component {
                     <Grid item>
                         <h1>Dashboard</h1>
                     </Grid>
+                    {/* If user is a sitter, can update preferences */}
                     {this.state.user.is_sitter === 1 &&
                     <React.Fragment>
                         <Grid item>
@@ -73,10 +77,12 @@ export default class Dashboard extends React.Component {
                         <Grid item>
                             <h2>Your Pets</h2>
                         </Grid>
+                        {/* Add Pet Button */}
                         <Grid item>
                             <AddPet/>
                         </Grid>
                     </Grid>
+                    {/* User Pet Cards */}
                     <Grid item container direction={'row'} justify={'flex-start'} alignItems={'flex-start'}
                           spacing={24}>
                         {this.state.pets.map(pet => (
@@ -96,6 +102,7 @@ export default class Dashboard extends React.Component {
                             </Button>
                         </Grid>
                     </Grid>
+                    {/* User Listing Cards */}
                     <Grid container item direction={'column'} spacing={24}>
                         {this.state.listings.map(listing => (
                             <Grid item key={listing.request_id}>

@@ -8,6 +8,7 @@ import ListingCard from "./ListingCard";
 import ListingFilter from "./ListingFilter";
 import {Link} from "react-router-dom";
 
+// Page Container for Listings tab
 export default class Dashboard extends React.Component {
 
     state = {
@@ -18,6 +19,7 @@ export default class Dashboard extends React.Component {
         this.getListings();
     }
 
+    // fetches all listings from database
     getListings = _ => {
         fetch(`http://localhost:5000/listings`)
             .then(response => response.json())
@@ -40,6 +42,7 @@ export default class Dashboard extends React.Component {
                             </Button>
                         </Grid>
                     </Grid>
+                    {/*Displays all Listings as cards*/}
                     <Grid container item direction={'row'} spacing={24} justify={'space-between'}>
                         <Grid item container direction={'row'} justify={'flex-start'} alignItems={'flex-start'}
                               spacing={24} xs={9}>

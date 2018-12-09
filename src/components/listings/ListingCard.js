@@ -6,12 +6,14 @@ import CardMedia from "@material-ui/core/CardMedia/CardMedia";
 import CardContent from "@material-ui/core/CardContent/CardContent";
 import {petImages} from "../../constants";
 
+// Card for Listing Info
 export default class ListingCard extends React.Component {
 
     render() {
         return (
             <Card className={'listing-card'}>
                 <CardActionArea className={' listing-card card-action'}>
+                    {/* Pet Photo, Name,  & Species */}
                     <div className={'pet-profile'}>
                         <CardMedia
                             className={'pet-pic'}
@@ -22,6 +24,7 @@ export default class ListingCard extends React.Component {
                             <span className={'species'}>, {this.props.listing.species}</span>
                         </h6>
                     </div>
+                    {/* Listing info */}
                     <CardContent className={'listing-content'}>
                         <h3>{this.props.listing.title}</h3>
                         <h4>Owner: {this.props.listing.owner}</h4>

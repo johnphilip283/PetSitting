@@ -9,6 +9,7 @@ import {userImages} from "../../constants";
 import Stars from "./Stars";
 import {Redirect} from "react-router-dom";
 
+// Card for Pet Sitters
 export default class SitterCard extends React.Component {
 
     state = {
@@ -20,6 +21,7 @@ export default class SitterCard extends React.Component {
         this.getPreferences();
     }
 
+    // Gets preferences of the user with user_id
     getPreferences = _ => {
         fetch(`http://localhost:5000/users/${this.props.sitter.user_id}/preferences`)
             .then(response => response.json())
@@ -32,14 +34,16 @@ export default class SitterCard extends React.Component {
     };
 
     render() {
-
+        {/* Go to sitter details */}
         if (this.state.redirect) {
             return <Redirect to={"/sitters/" + this.props.sitter.user_id}/>
         } else {
             return (
                 <Card className={'sitter-card'}>
+                    {/* Sitter Card */}
                     <CardActionArea className={'card-action'} onClick={() => this.setState({redirect: true})}>
-                        <div className={'pet-profile'}>
+                        {/* Sitter Photo */}
+                        <div className={'sitter-profile'}>
                             <CardMedia
                                 className={'sitter-pic'}
                                 image={userImages[this.props.sitter.user_id - 1]}
@@ -48,13 +52,16 @@ export default class SitterCard extends React.Component {
                         </div>
                         <CardContent className={'sitter-content'}>
                             <div className={'title'}>
+                                {/* Sitter Name */}
                                 <h3>{this.props.sitter.name}</h3>
                                 <Button className={'contact'} variant={'contained'} color={'secondary'}>Contact</Button>
                             </div>
                             <h4>{this.props.sitter.city}</h4>
                             <p>{this.props.sitter.email}</p>
                             <p>{this.props.sitter.phone_number}</p>
+                            {/* Sitter Preferences */}
                             <div className={'prefs'}>{this.state.prefs}</div>
+                            {/* Sitter's average rating */}
                             <Stars stars={this.props.sitter.avg_rating}/>
                         </CardContent>
                     </CardActionArea>

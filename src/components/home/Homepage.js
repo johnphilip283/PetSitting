@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 
 import './Homepage.scss';
 
+// Landing Page
 export default class Homepage extends React.Component {
 
     render() {

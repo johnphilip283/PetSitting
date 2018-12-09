@@ -7,6 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia/CardMedia";
 import CardContent from "@material-ui/core/CardContent/CardContent";
 import {petImages} from "../../constants";
 
+// Pet Card to display info about a pet
 export default class PetCard extends React.Component {
     constructor(props) {
         super(props);
@@ -22,8 +23,11 @@ export default class PetCard extends React.Component {
                         title={this.props.pet.name}
                     />
                     <CardContent>
+                        {/* Pet Name & Species */}
                         <h3>{this.props.pet.name}<span className={'species'}>, {this.props.pet.species_name}</span></h3>
+                        {/* Pet Age */}
                         <h4>Age: {this.props.pet.age}</h4>
+                        {/* Pet Description */}
                         <p>{this.props.pet.description}</p>
                     </CardContent>
                 </CardActionArea>

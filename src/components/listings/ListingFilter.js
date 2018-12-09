@@ -7,6 +7,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import './ListingFilter.scss';
 import TextField from "@material-ui/core/TextField";
 
+// Filter Listings Component
 export default class ListingFilter extends React.Component {
 
     constructor(props) {
@@ -35,6 +36,7 @@ export default class ListingFilter extends React.Component {
             <Card className={'filter'}>
                 <h3>Filters</h3>
                 <h4>Pet Type</h4>
+                {/* Filter by Species */}
                 <FormGroup className={'category'}>
                     <FormControlLabel control={
                         <Checkbox checked={this.state.dog} onChange={this.handleChange('dog')}
@@ -62,6 +64,7 @@ export default class ListingFilter extends React.Component {
                                   value='8' color="primary"/>} label="Fish"/>
                 </FormGroup>
                 <h4>Wage</h4>
+                {/* Filter by Min & Max Wage */}
                 <div className={'category'}>
                     <TextField
                         label="Min"

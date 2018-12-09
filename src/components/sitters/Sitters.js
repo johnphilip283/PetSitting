@@ -6,6 +6,7 @@ import './Sitters.scss';
 import SitterCard from "./SitterCard";
 import {Link} from "react-router-dom";
 
+// Sitter Container for sitter tab
 export default class Sitters extends React.Component {
 
     state = {
@@ -16,6 +17,7 @@ export default class Sitters extends React.Component {
         this.getSitters();
     }
 
+    // get all users that are pet-sitters
     getSitters = _ => {
         fetch(`http://localhost:5000/sitters`)
             .then(response => response.json())

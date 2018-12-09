@@ -4,6 +4,7 @@ import Checkbox from "@material-ui/core/Checkbox";
 import FormGroup from "@material-ui/core/FormGroup";
 import Grid from "@material-ui/core/Grid";
 
+// Species Checkboxes for Pet Sitter Preferences
 export default class SitterPreferences extends React.Component {
 
     constructor(props) {
