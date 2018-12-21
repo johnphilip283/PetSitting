@@ -1,22 +1,24 @@
-# src/
+# Petcetera
+
+## src/
 This folder contains all of the React components that we use in order to build the website.
 
-# `index.js`
+## `index.js`
 index.js contains the server that communicates with the local instance of MySQL Workbench, and exposes all of the APIs that our front-end uses.
 
-# sql_script/
+## sql_script/
 Contains the SQL files that are able to duplicate our database on a local machine. 
 
-# public/
+## public/
 Contains all of the static assets (images, etc) that we use on the front-end.
 
-# node-modules/
+## node-modules/
 Contains all of the React dependencies that we need for the front-end.
 
-# wireframes/
+## wireframes/
 Contains our preliminary sketches for the website.
 
-# Installation Instructions
+## Installation Instructions
 
 Before attempting these installation steps, make sure you have the latest version of Node.js and nodemon installed.
 
