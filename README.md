@@ -18,10 +18,10 @@ Contains our preliminary sketches for the website.
 
 # Installation Instructions
 
-Before attempting these installation steps, make sure you have the latest version of Node and nodemon installed.
+Before attempting these installation steps, make sure you have the latest version of Node.js and nodemon installed.
 
 1. From sql_scripts/, run petsitting_create.sql and petsitting_insert.sql. 
-2. Edit index.js line 9 with your local MySQL Workbench connection information, changing the root password to match yours.
+2. Edit line 9 in index.js with your local MySQL Workbench connection information, changing the root password to match yours.
 3. In your terminal, navigate to the root directory of the project and run `nodemon index.js`
 4. In your terminal, then run `npm install`.
 5. Then, in your terminal, run `npm start`.
